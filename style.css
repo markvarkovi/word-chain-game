@@ -1,0 +1,128 @@
+.background {
+    background-image: url("https://th.bing.com/th/id/OIG.xD6XlwhigIGTNR4h8BkD?pid=ImgGn");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#page-title {
+    color: rgb(146, 89, 89);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px outset
+}
+
+#input-text {
+    width: 70%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin: 8px 0;
+    border: 3px outset rgb(189, 152, 152);
+    background-color: grey;
+    color: wheat;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight:600;
+    font-style: italic;
+    position: absolute;
+    margin-top: -1%;
+    width: 25%;
+    text-decoration: none;
+}
+
+::placeholder {
+    color:rgb(0, 0, 0);
+    opacity: 20%;
+    position: absolute;
+    width: 100%;
+    left: 17%;
+}
+
+#input-text:hover {
+    background-color: rgb(185, 174, 174);
+}
+
+#reset {
+    margin: 2.5% 5%;
+    margin-left: 0.5%;
+    width: 7%;
+    display: inline-block;
+}
+
+#reset-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight:bold;
+
+
+}
+
+#reset-btn:hover {
+    background: #c0392b;
+    transform: scale(1.02);
+}
+
+#submit {
+    margin: 2.5% 1%;
+    display: inline-block;
+}
+#submit-btn {
+    background: linear-gradient(to bottom, #4CAF50, #45a049);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px #333;
+    transition: background 0.3s, transform 0.2s;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-size: large;
+   font-weight:bold;
+
+}
+
+#submit-btn:hover {
+    background: linear-gradient(to bottom, #45a049, #4CAF50);
+    transform: scale(1.02);
+}
+
+#word-table {
+    background-color: black;
+    border: 3px outset;
+    word-spacing: 1.05em;
+    width: 100%;
+    margin-top: 5%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight:bold;
+}
+
+.header {
+    background-color: rgb(146, 89, 89);
+}
+
+.header:hover {
+    background-color: rgb(210, 140, 140);
+}
+
+.rows {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    font-weight:normal;
+}
+
+.rows:hover {
+    background-color: rgb(185, 174, 174);
+}
