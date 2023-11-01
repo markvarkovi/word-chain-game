@@ -34,6 +34,12 @@ function submitWord() {
 
     submitBtnElement.addEventListener('click', function () {
 
+        const data = document.querySelectorAll('.text-data')
+        let TEXT = "";
+        for (let index = 0; index < data.length; index++) {
+            TEXT += data[index]
+        }
+
         let inputValue = inputElement.value
 
         let index = 0;
@@ -42,25 +48,26 @@ function submitWord() {
         // if (A.length < 1) {
         // if (A.charAt(A.length - 1) == inputValue.charAt(0)) {
 
-        //If the first letter is CORRECT
-        // if (!inputValue && data)
-        if (!smallABC.includes(inputValue.charAt(0)) && !abc.includes(inputValue.charAt(0))) { //First character invalid
-            alert("Invalid input! Special characters are not allowed!");
-            inputElement.value = "";
-            index = NaN;
-        } else if (!smallABC.includes(inputValue.charAt(inputValue.length - 1)) && !abc.includes(inputValue.charAt(inputValue.length - 1))) {
-            alert("Invalid input! Special characters are not allowed!"); //Last character invalid
-            inputElement.value = "";
-            index = NaN;
-        }
-        else if (abc.includes(inputValue.charAt(0))) index = abc.indexOf(inputValue.charAt(0)); //Capital letter to be added under the correct letter
-        else if (smallABC.includes(inputValue.charAt(0))) index = smallABC.indexOf(inputValue.charAt(0)); //Underscore letter to be added under the correct letter
-        else { // If the first letter is not the previous word's last letter
+        //If the first letter matches the previous word last letter
+        
+        /*if (This is what I need to figure out) {*/
+            if (!smallABC.includes(inputValue.charAt(0)) && !abc.includes(inputValue.charAt(0))) { //First character invalid
+                alert("Invalid input! Special characters are not allowed!");
+                inputElement.value = "";
+                index = NaN;
+            } else if (!smallABC.includes(inputValue.charAt(inputValue.length - 1)) && !abc.includes(inputValue.charAt(inputValue.length - 1))) {
+                alert("Invalid input! Special characters are not allowed!"); //Last character invalid
+                inputElement.value = "";
+                index = NaN;
+            }
+            else if (abc.includes(inputValue.charAt(0))) index = abc.indexOf(inputValue.charAt(0)); //Capital letter to be added under the correct letter
+            else if (smallABC.includes(inputValue.charAt(0))) index = smallABC.indexOf(inputValue.charAt(0)); //Underscore letter to be added under the correct letter
+            else { // If the first letter is not the previous word's last letter
             alert("Incorrect word! You can only start your word with the previous word's last letter!");
             inputElement.value = "";
             index = NaN;
         }
-        
+
         const tableDataElement = document.querySelector(`#data${index}`)
 
         tableDataElement.insertAdjacentHTML('beforeend', inputValue)
@@ -71,10 +78,9 @@ function submitWord() {
 makeTable();
 submitWord();
 
-const data = document.querySelectorAll('.text-data')
-let container = "";
-for (const element of data) 
-    container = element
+
+
+
 
 
 
