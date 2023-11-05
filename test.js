@@ -1,9 +1,8 @@
-let abc = "ABCDEFGH"
-let smallAbc =  abc.toLowerCase();
-let index = 0;
-let word;
+let words = [undefined, "egy","ketto","harom"]
 
+if (words.includes("egy")) {
+    console.log("TALALAT")
+} else {
+    console.log("nem talált");
+}
 
-let splitAbc = abc.split("")
-
-console.log(word.length);
