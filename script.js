@@ -41,12 +41,13 @@ function submitWord() {
   let wordLastChar = "";
   let wordElement = "";
   let allWords = [];
+  let dupedWordID = "";
+  let dupedWordElement = "";
 
   submitBtnElement.addEventListener("click", function () {
     const inputValue = inputElement.value;
     const lastLetter = inputValue.charAt(inputValue.length - 1);
     const firstChar = inputValue.charAt(0);
-    
 
     let index = 0;
 
@@ -58,7 +59,6 @@ function submitWord() {
       wordElement.textContent === undefined
     ) {
       if (!smallABC.includes(firstChar) && !abc.includes(firstChar)) {
-        
         alert("Invalid input! Special characters are not allowed!"); //First character invalid
         inputElement.value = "";
         index = NaN;
@@ -67,7 +67,10 @@ function submitWord() {
         inputElement.value = "";
         index = NaN;
       } else if (allWords.includes(inputValue)) {
-        alert("World already used! You can only use a word once!"); //if you use the same word 
+        dupedWordID = allWords.indexOf(inputValue) + 1;
+        alert(
+          `"${inputValue}" word already used at index ${dupedWordID}! You can only use a word once!`
+        ); //if you use the same word
         inputElement.value = "";
         index = NaN;
       } else if (abc.includes(firstChar)) {
@@ -92,7 +95,7 @@ function submitWord() {
 
     tableDataElement.insertAdjacentHTML(
       "beforeend",
-      `<span id=${firstChar}${counter}>${inputValue}<br></span>`
+      `<span id=${firstChar}${counter}>${counter}.${inputValue}<br></span>`
     );
 
     wordElement = document.querySelector(`#${firstChar}${counter}`);
@@ -101,9 +104,7 @@ function submitWord() {
     );
 
     inputElement.value = "";
-    console.log(allWords);
   });
- 
 }
 
 makeTable();
