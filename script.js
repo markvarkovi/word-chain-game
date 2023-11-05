@@ -60,8 +60,11 @@ function submitWord() {
                 inputElement.value = "";
                 index = NaN;
             }
-            else if (abc.includes(inputValue.charAt(0))) index = abc.indexOf(inputValue.charAt(0)); //Capital letter to be added under the correct letter
-            else if (smallABC.includes(inputValue.charAt(0))) index = smallABC.indexOf(inputValue.charAt(0)); //Underscore letter to be added under the correct letter
+            else if (abc.includes(inputValue.charAt(0))) 
+            index = abc.
+        indexOf(inputValue.charAt(0)); //Capital letter to be added under the correct letter
+            else if (smallABC.includes(inputValue.charAt(0))) 
+            index = smallABC.indexOf(inputValue.charAt(0)); //Underscore letter to be added under the correct letter
             else { // If the first letter is not the previous word's last letter
             alert("Incorrect word! You can only start your word with the previous word's last letter!");
             inputElement.value = "";
