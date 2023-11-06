@@ -1,6 +1,7 @@
 let words = [undefined, "egy","ketto","harom"]
 
-let countWords = words.indexOf("egy") + 1
+let countWords = "Chains remaining: 0"
 
-console.log(countWords);
+const noChain = countWords.split(":")[1][1]
+console.log(noChain);
 
