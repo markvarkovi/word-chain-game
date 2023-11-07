@@ -83,7 +83,6 @@ function submitWord() {
   let tableDataElement = "";
 
   let counter = 0;
-  let healthCounter = 4;
 
   let wordLastChar = "";
   let wordElement = "";
@@ -108,12 +107,10 @@ function submitWord() {
         alert("Invalid input! Special characters are not allowed!"); //First character invalid
         inputElement.value = "";
         index = NaN;
-        healthCounter--;
       } else if (!smallABC.includes(lastLetter) && !abc.includes(lastLetter)) {
         alert("Invalid input! Special characters are not allowed!"); //Last character invalid
         inputElement.value = "";
         index = NaN;
-        healthCounter--;
       } else if (allWords.includes(inputValue)) {
         dupedWordID = allWords.indexOf(inputValue) + 1;
         alert(
@@ -121,7 +118,6 @@ function submitWord() {
         ); //if you use the same word
         inputElement.value = "";
         index = NaN;
-        healthCounter--;
       } else if (abc.includes(firstChar)) {
         index = abc.indexOf(firstChar); //Capital letter to be added under the correct letter
         counter++;
@@ -139,7 +135,6 @@ function submitWord() {
       );
       inputElement.value = "";
       index = NaN;
-      healthCounter--;
     }
 
     tableDataElement = document.querySelector(`#data${index}`);
@@ -155,8 +150,9 @@ function submitWord() {
     );
 
     inputElement.value = "";
-
-    if (allWords.length > 19) {
+    
+    const gameOverWin = () => {
+    if (allWords.length === 20) {
       setTimeout(() => {
         window.location.reload();
       }, 4800);
@@ -165,7 +161,9 @@ function submitWord() {
       document.querySelector("#congrats").innerHTML =
         '<img src="https://media1.giphy.com/media/PIdyzBZ8XiKQWfgwYk/giphy.gif?cid=ecf05e47f2qxajbjog0p1rkdjjp0c8nx7xgtcwn543xwct2o&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Congratulations!">';
     }
+  }
 
+    const informPlayer = () => {
     if (allWords.length === 5) {
       document.querySelector("#info").textContent = `Last word 🡺 ${inputValue} 🡸 Nice Start!`
     } else if (allWords.length === 10) {
@@ -175,6 +173,10 @@ function submitWord() {
     } else {
     document.querySelector("#info").textContent = `Last word 🡺 ${inputValue} 🡸 ${counter} of 20 WORD`;
     }
+  }
+
+  gameOverWin()
+  informPlayer()
   });
 }
 
